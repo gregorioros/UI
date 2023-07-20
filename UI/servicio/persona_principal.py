@@ -1,8 +1,8 @@
 from PySide6.QtWidgets import QMainWindow
 
 from UI.vtn_principal import Ui_vtn_principal
-from dominio.docente import Docente
-from dominio.estudiante import Estudiante
+from UI.dominio.docente import Docente
+from UI.dominio.estudiante import Estudiante
 
 
 class PersonaPrincipal(QMainWindow):
@@ -10,8 +10,8 @@ class PersonaPrincipal(QMainWindow):
         super(PersonaPrincipal, self).__init__()
         self.ui = Ui_vtn_principal()
         self.ui.setupUi(self)
-        self.ui.stb_estado.showMessage('Bienvenido', 2000)
-        self.ui.btn_grabar.clicked.connect(self.grabar)
+        self.ui.statusbar.showMessage('Bienvenido', 2000)
+        self.ui.vtn_guardar.clicked.connect(self.grabar)
 
 
     def grabar(self):
